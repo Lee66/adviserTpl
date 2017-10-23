@@ -1,0 +1,29 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>特惠新房</title><style>*{padding:0;margin:0}#content{width:10rem;margin:0 auto;font-size:.277777rem;line-height:.444444rem}.houseInfo{padding:70px 20px 10px 60px;padding:.972222rem .277777rem .138888rem .833333rem;background:#1c1c34;color:#fff}.transitionLine{height:.388888rem;background-image:linear-gradient(-90deg,rgba(0,0,0,.8) 0,rgba(0,0,0,0) 50%,rgba(0,0,0,.8) 100%)}#content>img{display:block;width:100%}.houseInfo h1{font-size:.833333rem;line-height:.833333rem;font-weight:900}.houseInfo h5{font-size:.444444rem;margin:.138888rem 0 .7rem 0;font-weight:100}.houseDetails p{float:left;width:4.305555rem;line-height:.416666rem}.houseDetails{overflow:hidden}.houseDetails ul{float:left;height:inherit;border-left:1px solid rgba(255,255,255,.3);line-height:.402777rem}.houseDetails ul li{margin-left:1.166666rem}.houseDetails ul li img{display:block;height:1.111111rem;width:2.833333rem;height:2.833333rem;margin-top:.2rem}.footer{margin-top:.736111rem;clear:both;font-size:.277777rem}</style><script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js" charset="utf-8"></script><script src="http://shfcjr.oss-cn-shanghai.aliyuncs.com/template-web.js" charset="utf-8"></script></head><body><div id="content"></div><script id="houseDataTpl" type="text/html"><div class="houseInfo" style="background: {{background}};">
+				<h1>{{posterTopic}}</h1>
+				<h5>{{buildingName}}</h5>
+				<div class="houseDetails">
+					<p>
+						{{@ sellingPoints.replace(/,/g,'<br/>')}}
+					</p>
+					<ul>
+						<li>{{area}}</li>
+						<li>{{saleModel}}</li>
+						<li>{{saleArea}}</li>
+						<li>{{salePrice}}</li>
+						<li><img src="{{shareCode}}" /></li>
+					</ul>
+				</div>
+				<div class="footer">
+					<p>开盘时间：{{openTime}}</p>
+					<p>联系人：{{agentName}}</p>
+					<p>手机：{{agentPhone|formatPhone}}</p>
+				</div>
+			</div>
+			<div class="transitionLine"></div>
+			<img src="{{buildingPicUrl}}" />
+			</div></script><script>var houseData = {!data};
+			template.defaults.imports.formatPhone = function(value) {
+				return value.replace(/\B(?=(?:\d{4})+$)/g, '-');
+			}
+			var html = template('houseDataTpl', houseData);
+			document.getElementById('content').innerHTML = html;</script></body></html>

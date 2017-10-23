@@ -1,0 +1,49 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>刚需热卖</title><meta name="format-detection" content="telephone=no"><style>*{padding:0;margin:0}body{height:100%;width:100%;line-height:100%}#content{width:10rem;margin:0 auto;font-size:.277777rem;line-height:.444444rem;color:#fff;background:#273036}#content>div{overflow:hidden}.houseInfo{padding:.972222rem .277777rem .138888rem .833333rem}.transitionLine{height:.388888rem;background-image:linear-gradient(-90deg,rgba(0,0,0,.8) 0,rgba(0,0,0,0) 50%,rgba(0,0,0,.8) 100%)}.imgBox{position:relative;display:flex;border-radius:50%;width:7.222222rem;height:7.222222rem;margin:0 auto;border:1px solid #93979a;justify-content:center;align-items:center}.imgBox img{display:block;width:4.266666rem;height:4.166666rem;border-radius:50%;padding:.277777rem;border:3px solid #93979a}.imgBox div{display:flex;justify-content:center;align-items:center;width:5.833333rem;height:5.583333rem;border-radius:50%;border:2px solid #93979a}.posterTopic{margin-top:1.388888rem;margin-left:.902777rem;font-size:.833333rem;line-height:.833333rem;font-weight:900}.buildingName{font-size:.444444rem;margin:.138888rem 0 .736111rem .902777rem;font-weight:100}.houseDetails p{float:left;width:4.305555rem;line-height:.436666rem}.houseDetails{overflow:hidden}.houseDetails ul{float:left;height:inherit;border-left:1px solid rgba(255,255,255,.3);line-height:.402777rem}.houseDetails ul li{margin-left:1.166666rem}.houseDetails ul li img{display:block;width:2.833333rem;height:2.833333rem;margin-top:.2rem}.footer{margin:1.569444rem 0 .555555rem 0;clear:both;font-size:.277777rem}</style><script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js" charset="utf-8"></script><script src="http://shfcjr.oss-cn-shanghai.aliyuncs.com/template-web.js" charset="utf-8"></script></head><body><div id="content"></div><script id="houseDataTpl" type="text/html"><div style="background: {{background}};">
+				<h1 class="posterTopic">{{posterTopic}}</h1>
+				<h5 class="buildingName">{{buildingName}}</h5>
+				<div class="imgBox">
+					<div>
+						<img src="{{buildingPicUrl}}" />
+					</div>
+				</div>
+				<div class="houseInfo">
+					<div class="houseDetails">
+						<p>
+							{{@ sellingPoints.replace(/,/g,'<br/>')}}
+						</p>
+						<ul>
+							<li>{{area}}</li>
+							<li>{{saleModel}}</li>
+							<li>{{saleArea}}</li>
+							<li>{{salePrice}}</li>
+							<li><img src="{{shareCode}}" /></li>
+						</ul>
+					</div>
+					<div class="footer">
+						<p>开盘时间：{{openTime}}</p>
+						<p>联系人：{{agentName}}</p>
+						<p>手机：<span id="phone">{{agentPhone}}</span></p>
+					</div>
+				</div>
+			</div>
+			</div></script><script>//			var houseData = {
+//				background: '',
+//				area: "上海周边－南通",
+//				buildingName: "汤臣一品",
+//				buildingPicUrl: "http://shfcjr-img.oss-cn-shanghai.aliyuncs.com/building/building/2016/09/27/IMG_1474956171546_74280.jpg",
+//				posterTopic: "刚需热卖",
+//				openTime: "2017-05-10",
+//				salePrice: "110000",
+//				saleModel: "2-3",
+//				saleArea: "100-100",
+//				sellingPoints: "全国首屈一指的景观豪宅,<br />一线黄浦江景,<br />百年老外风情,<br />清新优美的现代园艺,<br />尽收眼底",
+//				sellingPoints: "全国首屈一指的景观豪宅,一线黄浦江景,百年老外风情,清新优美的现代园艺,尽收眼底",
+//				agentName: "肖欢",
+//				agentPhone: "11851654926",
+//				shareCode: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1501832202779&di=05abdbdda95c060e7002f6d21b0ec729&imgtype=0&src=http%3A%2F%2Fpic.enorth.com.cn%2F003%2F017%2F057%2F00301705773_66bc4800.gif"
+//			};
+			var houseData = {!data};
+			var html = template('houseDataTpl', houseData);
+			document.getElementById('content').innerHTML = html;
+			var phoneNum = document.getElementById("phone").innerHTML;
+			document.getElementById("phone").innerHTML = phoneNum.replace(/\B(?=(?:\d{4})+$)/g, '-');</script></body></html>

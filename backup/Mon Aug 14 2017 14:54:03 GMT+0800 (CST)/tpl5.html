@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>重点学区</title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			
+			#content {
+				position: relative;
+				width: 10rem;
+				margin: 0 auto;
+				height: auto;
+				font-size: 0.277777rem;
+				line-height: 0.444444rem;
+			}
+			
+			.container {
+				position: relative;
+				/*top: -3rem;*/
+				margin-top: -3rem;
+				overflow: hidden;
+			}
+			
+			.houseInfo {
+				position: relative;
+				/*height: 7.5rem;
+				height: 8rem;*/
+				margin-top: 3rem;
+				/*padding: 1.361111rem 0 0 0;*/
+				background: #008feb;
+				color: #FFFFFF;
+				padding-left: 1.083333rem;
+				border-bottom: 0.4rem solid #48BEFF;
+			}
+			
+			.bgFigure {
+				position: absolute;
+				/*top: 3rem;*/
+				left: 0;
+				width: 0;
+				border-top: 3rem solid transparent;
+				border-left: 5rem solid #008feb;
+				border-right: 5rem solid #008feb;
+				border-bottom: 1.388888rem solid #008feb;
+			}
+			
+			.border {
+				position: absolute;
+				left: 0;
+				z-index: 1;
+				width: 9.21rem;
+				border-top: 0.24rem solid transparent;
+				border-left: 0.4rem solid #48BEFF;
+				border-right: 0.4rem solid #48BEFF;
+				border-bottom: 0.4rem solid #48BEFF;
+			}
+			
+			#content img {
+				display: block;
+				width: 100%;
+			}
+			
+			.houseInfo h1 {
+				font-size: 0.666666rem;
+				line-height: 0.833333rem;
+				font-weight: 900;
+			}
+			
+			.houseInfo h1 span {
+				font-size: 18px;
+				color: #D8D8D8;
+				margin: 0 0.416666rem;
+				vertical-align: middle;
+			}
+			
+			.houseInfo h5 {
+				position: relative;
+				font-size: 0.444444rem;
+				margin: 0.347222rem 0 0.166666rem 0;
+			}
+			
+			.houseInfo h5 span {
+				position: relative;
+				top: 0.46rem;
+				left: -0.12rem;
+				font-size: 0.972222rem;
+				line-height: 0;
+			}
+			
+			.houseInfo p {
+				font-size: 0.333333rem;
+				line-height: 0.555555rem;
+			}
+			
+			.houseInfo .sellingPoints {
+				position: relative;
+				width: 80%;
+				line-height: 0.5rem;
+				font-size: 0.277777rem;
+				padding-bottom: 0.486111rem;
+				border-bottom: 1px solid #FFFFFF;
+			}
+			
+			.houseInfo .sellingPoints em {
+				position: absolute;
+				bottom: -0.7rem;
+				right: -1.111111rem;
+				font-size: 0.972222rem;
+			}
+			
+			.houseInfo p span {
+				display: inline-block;
+				padding: 0.069444rem;
+				border: 1px solid #FFFFFF;
+				border-radius: 4px;
+				line-height: 1;
+				margin-right: 0.277777rem;
+			}
+			
+			.houseInfo h3 {
+				margin-top: 0.569444rem;
+				font-size: 0.444444rem;
+				color: #FFDE43;
+			}
+			
+			.houseInfo .info {
+				line-height: 0.972222rem;
+			}
+			
+			.houseInfo .info span {
+				border: none;
+			}
+			
+			#content .footer {
+				margin: 0.513888rem 0 1.388888rem 0;
+				font-size: 0.333333rem;
+				font-weight: 900;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				var container = document.getElementById("container");
+				var border = document.getElementsByClassName('border')[0];
+				border.style.height = container.offsetHeight + 'px';
+			}
+		</script>
+		<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script src="http://shfcjr.oss-cn-shanghai.aliyuncs.com/flexible.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="http://shfcjr.oss-cn-shanghai.aliyuncs.com/template-web.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div id="content">
+			<img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1502379343&di=48b91082a65a92475b63f8b4817ebc1e&src=http://pic17.nipic.com/20111101/4316919_123457371372_2.jpg">
+			<div class="container" id="container">
+				<div class="border"></div>
+				<div class="bgFigure"></div>
+				<div class="houseInfo" style="background: ;">
+					<h1>重点学区</h1>
+					<h5> <span>“</span>汤臣一品</h5>
+					<p class="sellingPoints"> <em>”</em>全国首屈一指的景观豪宅,一线黄浦江景,百年老外风情,清新优美的现代园艺,尽收眼底</p>
+					<h3>110000元／平</h3>
+					<p class="info"><span>江苏太仓</span> <span>2-3室</span><span>100-100平</span></p>
+					<p>
+						<span>满五</span>
+						<span>满四</span>
+						<span>满三</span>
+					</p>
+					<div class="footer">
+						<p>联系人：肖欢</p>
+						<p>手机：11851654926</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script id="houseDataTpl" type="text/html">
+			<img src="{{housePictureUrl}}" />
+			<div class="container" id="container">
+				<div class="border"></div>
+				<div class="bgFigure"></div>
+				<div class="houseInfo" style="background: ;">
+					<h1>{{posterTitle}}</h1>
+
+					<h5> <span>“</span>{{plotName}}</h5>
+					<p class="sellingPoints"> <em>”</em>{{houseDetail}}</p>
+					<h3>110000元／平</h3>
+					<p class="info">
+						<span>江苏太仓</span> <span>{{room}}室{{hall}}厅{{bathroom}}卫</span><span>{{area}}平</span>
+						<span>朝{{if orientation==1}}东{{else if orientation==2}}南{{else if orientation==3}}西{{else if orientation==4}}北{{else if orientation==5}}东南{{else if orientation==6}}东北{{else if orientation==7}} 西南 {{else if orientation==8}}西北{{else if orientation==9}}东西{{else if orientation==10}}南北{{/if}}</span>
+					</p>
+					<p>
+						{{each tags.split(/[,，]/) as value}}
+						<span>{{value}}</span> {{/each}}
+					</p>
+					<div class="footer">
+						<p>联系人：{{agentName}}</p>
+						<p>手机：{{agentPhone|formatPhone}}</p>
+					</div>
+				</div>
+			</div>
+		</script>
+
+		<script>
+			var houseData = {
+				background: '',
+				plotName: "汤臣一品",
+				housePictureUrl: "http://shfcjr-img.oss-cn-shanghai.aliyuncs.com/building/building/2016/09/27/IMG_1474956171546_74280.jpg",
+				posterTitle: "房东急售",
+				room: 3,
+				hall: 2,
+				bathroom: 1,
+				houseDetail: "全国首屈一指的景观豪宅,一线黄浦江景,百年老外风情,清新优美的现代园艺,尽收眼底",
+				orientation: 5,
+				area: "100.33",
+				price: 3612,
+				tags: "满五,满四，满三",
+				agentName: "肖欢",
+				agentPhone: "11851654926"
+			};
+			template.defaults.imports.formatPhone = function(value) {
+				return value.replace(/\B(?=(?:\d{4})+$)/g, '-');
+			}
+			//var houseData = {!data};
+			var html = template('houseDataTpl', houseData);
+			document.getElementById('content').innerHTML = html;
+		</script>
+	</body>
+
+</html>

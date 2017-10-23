@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>今日笋盘</title>
+		<meta name="format-detection" content="telephone=no" />
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			
+			body {
+				height: 100%;
+				width: 100%;
+				line-height: 100%;
+			}
+			
+			#content {
+				width: 10rem;
+				margin: 0 auto;
+				font-size: 0.277777rem;
+				line-height: 0.444444rem;
+				color: #FFFFFF;
+				background: #b49595;
+				overflow: hidden;
+			}
+			
+			.houseInfo {
+				display: flex;
+				flex-direction: row-reverse;
+				justify-content: space-between;
+				padding: 1.111111rem 0.833333rem;
+			}
+			
+			.transitionLine {
+				height: 0.388888rem;
+				background-image: linear-gradient(-90deg, rgba(0, 0, 0, 0.80) 0%, rgba(0, 0, 0, 0.00) 50%, rgba(0, 0, 0, 0.80) 100%);
+			}
+			
+			.imgBox {
+				position: relative;
+				display: flex;
+				width: 7.777777rem;
+				height: 4.930555rem;
+				margin: 0 auto;
+				border: 1px solid #979797;
+				justify-content: center;
+				align-items: center;
+			}
+			
+			#content>div>img {
+				display: block;
+				width: 100%;
+			}
+			
+			.posterTopic {
+				font-size: 0.833333rem;
+				line-height: 0.833333rem;
+				font-weight: 900;
+				-webkit-writing-mode: vertical-lr;
+			}
+			
+			.buildingName {
+				font-size: 0.444444rem;
+				margin: 0 0.277777rem 0 1.375rem;
+				margin: 0 0.277777rem 0 2rem;
+				font-weight: 100;
+				-webkit-writing-mode: vertical-lr;
+			}
+			
+			.houseDetails {
+				height: auto;
+				/*display: flex;*/
+				/*flex-direction: row-reverse;*/
+				overflow: hidden;
+			}
+			
+			.houseDetails p {
+				width: 4rem;
+				line-height: 0.516666rem;
+				/*-webkit-writing-mode: vertical-rl;
+				writing-mode: tb-rl;
+				writing-mode: vertical-rl;*/
+			}
+			
+			.houseDetails ul {
+				height: inherit;
+				margin-top: 0.555555rem;
+				line-height: 0.502777rem;
+				/*-webkit-writing-mode: vertical-rl;
+				writing-mode: tb-rl;
+				writing-mode: vertical-rl;*/
+				font-size: 0.333333rem;
+			}
+			
+			.houseDetails ul li img {
+				display: block;
+				height: 1.111111rem;
+				width: 2.833333rem;
+				height: 2.833333rem;
+				margin-top: 0.2rem;
+			}
+			
+			.houseDetails ul li span {
+				display: inline-block;
+				padding: 0.069444rem;
+				border: 1px solid #FFFFFF;
+				border-radius: 4px;
+				line-height: 1;
+				margin-right: 0.277777rem;
+			}
+			
+			.houseDetails ul li span:last-child {
+				margin: 0;
+			}
+			
+			.footer {
+				display: flex;
+				justify-content: space-between;
+				margin: 1.569444rem 0 0.555555rem 0;
+				font-size: 0.277777rem;
+			}
+			
+			.footer div {
+				margin-left: 0.833333rem;
+			}
+			
+			.footer img {
+				display: block;
+				height: 1.805555rem;
+				width: 1.805555rem;
+				margin-right: 0.833333rem;
+			}
+			
+			.tags {
+				margin: 0.069444rem 0 0.208333rem;
+			}
+			
+			.tags p {
+				width: auto;
+			}
+			
+			.tagList {
+				display: inline-block;
+				width: auto;
+				height: 0.861111rem;
+				border-bottom: 1px solid #FFFFFF;
+			}
+			
+			#content h4 {
+				height: 0.833333rem;
+				line-height: 0.833333rem;
+				text-align: center;
+				background: rgba(255, 255, 255, 0.20);
+			}
+			
+			#content h4 span {
+				margin-right: 0.694444rem;
+				opacity: 0.7;
+			}
+			
+			#watermark {
+				float: right;
+				height: 0.833333rem;
+				width: 2rem;
+				margin-right: 0.3rem;
+			}
+		</style>
+		<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js" type="text/javascript" charset="utf-8"></script>
+		<script src="http://shfcjr.oss-cn-shanghai.aliyuncs.com/template-web.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div id="content"></div>
+		<script id="houseDataTpl" type="text/html">
+			<div style="background: {{background}};">
+				<img src="{{housePictureUrl}}" />
+				<div class="houseInfo" style="background: {{background}};">
+					<h1 class="posterTopic">{{posterTitle}}</h1>
+					<h5 class="buildingName">{{plotName}}</h5>
+					<div class="houseDetails">
+						<p>{{houseDetail}}</p>
+						<ul>
+							<li>{{room}}室{{hall}}厅{{bathroom}}卫</li>
+							<li>{{area}}平</li>
+							<li>朝{{if orientation==1}}东{{else if orientation==2}}南{{else if orientation==3}}西{{else if orientation==4}}北{{else if orientation==5}}东南{{else if orientation==6}}东北{{else if orientation==7}} 西南 {{else if orientation==8}}西北{{else if orientation==9}}东西{{else if orientation==10}}南北{{/if}}</li>
+							<li class="tags">
+								<p class="tagList">
+									{{each tags.split(/[,，]/) value}} {{if value}}
+									<span>{{value}}</span> {{/if}} {{/each}}
+								</p>
+							</li>
+							<li>{{price}}万</li>
+						</ul>
+					</div>
+				</div>
+				<h4>
+					<span>联系人：{{agentName}}</span><span>手机：<em id="phone">{{agentPhone}}</em></span>
+					<img id="watermark" src="http://shfcjr.oss-cn-shanghai.aliyuncs.com/watermark.png" />
+				</h4>
+			</div>
+		</script>
+
+		<script>
+			var houseData = {
+				background: '',
+				plotName: "汤臣一品",
+				housePictureUrl: "http://shfcjr-img.oss-cn-shanghai.aliyuncs.com/building/building/2016/09/27/IMG_1474956171546_74280.jpg",
+				posterTitle: "全明户型",
+				room: 3,
+				hall: 2,
+				bathroom: 1,
+				houseDetail: "全国首屈一指的景观豪宅,一线黄浦江景,百年老外风情,清新优美的现代园艺,尽收眼底",
+				orientation: 3,
+				area: "100.33",
+				price: 361,
+				tags: "满五,满四，满三",
+				agentName: "肖欢",
+				agentPhone: "11851654926"
+			};
+//			var houseData = {!data};
+			var html = template('houseDataTpl', houseData);
+			document.getElementById('content').innerHTML = html;
+			var phoneNum = document.getElementById("phone").innerHTML;
+			document.getElementById("phone").innerHTML = phoneNum.replace(/\B(?=(?:\d{4})+$)/g, '-');
+		</script>
+	</body>
+
+</html>

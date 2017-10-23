@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>房东急售</title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			
+			#content {
+				width: 10rem;
+				margin: 0 auto;
+				font-size: 0.277777rem;
+				line-height: 0.444444rem;
+			}
+			
+			.houseInfo {
+				/*height: 7.5rem;
+				height: 8rem;*/
+				padding: 1.361111rem 0 0 0;
+				background: #68808f;
+				color: #FFFFFF;
+				text-align: center;
+			}
+			
+			#content img {
+				display: block;
+				width: 100%;
+			}
+			
+			.houseInfo h1 {
+				font-size: 0.833333rem;
+				line-height: 0.833333rem;
+				font-weight: 900;
+			}
+			
+			.houseInfo h1 span {
+				font-size: 18px;
+				color: #D8D8D8;
+				margin: 0 0.416666rem;
+				vertical-align: middle;
+			}
+			
+			.houseInfo h5 {
+				font-size: 0.444444rem;
+				margin: 0.138888rem 0;
+				font-weight: 100;
+			}
+			
+			.houseInfo p {
+				font-size: 0.333333rem;
+				line-height: 0.555555rem;
+				opacity: 0.8;
+			}
+			
+			.houseInfo .sellingPoints {
+				width: 75%;
+				margin: 0 auto 0.555555rem auto;
+				line-height: 0.5rem;
+				font-size: 0.277777rem;
+			}
+			
+			.houseInfo p span {
+				display: inline-block;
+				padding: 0.069444rem;
+				border: 1px solid #FFFFFF;
+				border-radius: 4px;
+				line-height: 1;
+				margin-right: 0.277777rem;
+			}
+			
+			.totalPrices {
+				margin: 0.875rem 0 0.416666rem;
+			}
+			
+			.houseInfo h4 {
+				height: 0.833333rem;
+				line-height: 0.833333rem;
+				background: rgba(255, 255, 255, 0.20);
+			}
+			
+			.houseInfo h4 span {
+				margin-right: 0.694444rem;
+			}
+			
+			.houseDetails p {
+				float: left;
+				width: 4.305555rem;
+				line-height: 0.416666rem;
+			}
+			
+			.houseDetails {
+				height: 2.916666rem;
+			}
+			
+			.houseDetails ul {
+				float: left;
+				height: inherit;
+				border-left: 1px solid rgba(255, 255, 255, 0.3);
+				line-height: 0.402777rem;
+			}
+			
+			.houseDetails ul li {
+				margin-left: 1.166666rem;
+			}
+			
+			.houseDetails ul li img {
+				display: block;
+				height: 1.111111rem;
+				width: 1.111111rem;
+				margin-top: 0.2rem;
+			}
+			
+			.footer {
+				margin-top: 0.736111rem;
+				clear: both;
+				font-size: 0.277777rem;
+			}
+			
+			.imgBox {
+				position: relative;
+			}
+			
+			.imgBox>div {
+				position: absolute;
+				bottom: 0;
+				height: 3.5rem;
+				width: 100%;
+				overflow: hidden;
+			}
+			
+			.arcShade {
+				position: absolute;
+				z-index: 10;
+				bottom: -0.041666rem;
+				left: -1rem;
+				height: 3.5rem;
+				width: 12rem;
+				/*border-radius: 50% 50% 0 0;
+				border: 0.277777rem solid yellow;
+				border-radius: 50%;*/
+				/*				background: -webkit-radial-gradient(top center,farthest-corner,transparent 69%,yellow 69%,yellow 71%,#95ab94 70%);*/
+				background: -webkit-radial-gradient(top center, farthest-corner, transparent 65%, #B8B8B8 67%, #B8B8B8 69%, #68808f 68%);
+				/*box-shadow: 1.208333rem 1.208333rem 0 0 red;*/
+			}
+		</style>
+		<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script src="http://shfcjr.oss-cn-shanghai.aliyuncs.com/flexible.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="http://shfcjr.oss-cn-shanghai.aliyuncs.com/template-web.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div id="content">
+			<div class="imgBox">
+				<div>
+					<div class="arcShade"></div>
+				</div>
+				<img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1502379343&di=48b91082a65a92475b63f8b4817ebc1e&src=http://pic17.nipic.com/20111101/4316919_123457371372_2.jpg">
+			</div>
+			<div class="houseInfo" style="background: ;">
+				<h1><span>●</span>房东急售<span>●</span></h1>
+				<h5>汤臣一品</h5>
+				<p class="sellingPoints">全国首屈一指的景观豪宅,一线黄浦江景,百年老外风情,清新优美的现代园艺,尽收眼底</p>
+				<!--<p>上海周边－南通</p>-->
+				<p>3室2厅1卫</p>
+				<p>100.33平 朝西
+				</p>
+				<p>
+					<span>满五</span>
+					<span>满四</span>
+					<span>满三</span>
+				</p>
+				<p class="totalPrices">361万</p>
+				<h4><span>联系人：肖欢</span><span>手机：11851654926</span></h4>
+			</div>
+		</div>
+		<script id="houseDataTpl" type="text/html">
+			<div class="imgBox">
+				<div>
+					<div class="arcShade"></div>
+				</div>
+				<img src="{{housePictureUrl}}" />
+			</div>
+			<div class="houseInfo" style="background: {{background}};">
+				<h1><span>●</span>{{posterTitle}}<span>●</span></h1>
+				<h5>{{plotName}}</h5>
+				<p class="sellingPoints">{{houseDetail}}</p>
+				<!--<p>上海周边－南通</p>-->
+				<p>{{room}}室{{hall}}厅{{bathroom}}卫</p>
+				<p>{{area}}平 朝{{if orientation==1}}东{{else if orientation==2}}南{{else if orientation==3}}西{{else if orientation==4}}北{{else if orientation==5}}东南{{else if orientation==6}}东北{{else if orientation==7}} 西南 {{else if orientation==8}}西北{{else if orientation==9}}东西{{else if orientation==10}}南北{{/if}}
+				</p>
+				<p>
+					{{each tags.split(/[,，]/) as value}}
+					<span>{{value}}</span> {{/each}}
+				</p>
+				<p class="totalPrices">{{price}}万</p>
+				<h4><span>联系人：{{agentName}}</span><span>手机：{{agentPhone|formatPhone}}</span></h4>
+			</div>
+		</script>
+
+		<script>
+			var houseData = {
+				background: '',
+				plotName: "汤臣一品",
+				housePictureUrl: "http://shfcjr-img.oss-cn-shanghai.aliyuncs.com/building/building/2016/09/27/IMG_1474956171546_74280.jpg",
+				posterTitle: "房东急售",
+				room: 3,
+				hall: 2,
+				bathroom: 1,
+				houseDetail: "全国首屈一指的景观豪宅,一线黄浦江景,百年老外风情,清新优美的现代园艺,尽收眼底",
+				orientation: 3,
+				area: "100.33",
+				price: 3612,
+				tags: "满五,满四，满三",
+				agentName: "肖欢",
+				agentPhone: "11851654926"
+			};
+			template.defaults.imports.formatPhone = function(value) {
+				return value.replace(/\B(?=(?:\d{4})+$)/g, '-');
+			}
+			// var houseData = {!data};
+			var html = template('houseDataTpl', houseData);
+			document.getElementById('content').innerHTML = html;
+		</script>
+	</body>
+
+</html>

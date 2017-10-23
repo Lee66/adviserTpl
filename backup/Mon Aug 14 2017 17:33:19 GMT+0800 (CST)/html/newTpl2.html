@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>盛大开盘</title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			body{
+				height: 100%;
+				width: 100%;
+				line-height: 100%;
+			}
+			
+			#content {
+				width: 10rem;
+				margin: 0 auto;
+				font-size: 0.277777rem;
+				line-height: 0.444444rem;
+				color: #FFFFFF;
+				background: #541a1a;
+				overflow: hidden;
+			}
+			
+			.houseInfo {
+				/*height: 8.402777rem;*/
+				/*height: 7.291666rem;*/
+				padding: 70px 20px 10px 60px;
+				padding: 0.972222rem 0.277777rem 0.138888rem 0.833333rem;
+			}
+			
+			.transitionLine {
+				height: 0.388888rem;
+				background-image: linear-gradient(-90deg, rgba(0, 0, 0, 0.80) 0%, rgba(0, 0, 0, 0.00) 50%, rgba(0, 0, 0, 0.80) 100%);
+			}
+			.imgBox{
+				position: relative;
+				display: flex;
+				width: 7.777777rem;
+				height: 4.930555rem;
+				/*width: 7.5rem;
+				height: 4.652777rem;*/
+				margin: 0 auto;
+				border: 1px solid #979797;
+				/*border: 1px dashed #979797;*/
+				justify-content: center;
+				align-items: center;
+			}
+			.imgBox img {
+				display: block;
+				width: 6.944444rem;
+				height: 3.972222rem;
+			}
+			.imgBox div{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 7.5rem;
+				height: 4.652777rem;
+				border: 1px dashed #979797;
+			}
+			/*.imgBox img::after{
+				position: relative;
+				top: 0;
+				left: 0;
+				display: block;
+				width: 7.5rem;
+				height: 4.652777rem;
+				border: 1px dashed #979797;
+				content: '';
+			}*/
+			.posterTopic {
+				margin-top: 1.388888rem;
+				font-size: 0.833333rem;
+				line-height: 0.833333rem;
+				font-weight: 900;
+				text-align: center;
+			}
+			
+			.buildingName {
+				font-size: 0.444444rem;
+				margin: 0.138888rem 0 0.736111rem 0;
+				font-weight: 100;
+				text-align: center;
+			}
+			
+			.houseDetails p {
+				float: left;
+				width: 4.305555rem;
+				line-height: 0.436666rem;
+			}
+			
+			.houseDetails {
+				overflow: hidden;
+			}
+			
+			.houseDetails ul {
+				float: left;
+				height: inherit;
+				border-left: 1px solid rgba(255, 255, 255, 0.3);
+				line-height: 0.402777rem;
+			}
+			
+			.houseDetails ul li {
+				margin-left: 1.166666rem;
+			}
+			
+			.houseDetails ul li img {
+				display: block;
+				height: 1.111111rem;
+				width: 2.833333rem;
+				height: 2.833333rem;
+				margin-top: 0.2rem;
+			}
+			
+			.footer {
+				margin: 1.569444rem 0 0.555555rem 0;
+				clear: both;
+				font-size: 0.277777rem;
+			}
+		</style>
+		<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script src="http://shfcjr.oss-cn-shanghai.aliyuncs.com/flexible.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="http://shfcjr.oss-cn-shanghai.aliyuncs.com/template-web.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div id="content">
+			<h1 class="posterTopic">盛大开盘</h1>
+			<h5 class="buildingName">汤臣一品</h5>
+			<div class="imgBox">
+				<div>
+					<img src="http://shfcjr-img.oss-cn-shanghai.aliyuncs.com/building/building/2016/09/27/IMG_1474956171546_74280.jpg" />
+				</div>
+			</div>
+			<div class="houseInfo">
+				<div class="houseDetails">
+					<p>
+						全国首屈一指的景观豪宅,<br />一线黄浦江景,<br />百年老外风情,<br />清新优美的现代园艺,<br />尽收眼底
+					</p>
+					<ul>
+						<li>上海周边－南通</li>
+						<li>2-3室</li>
+						<li>100-100平</li>
+						<li>110000元／平</li>
+						<li><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1501832202779&di=05abdbdda95c060e7002f6d21b0ec729&imgtype=0&src=http%3A%2F%2Fpic.enorth.com.cn%2F003%2F017%2F057%2F00301705773_66bc4800.gif" /></li>
+					</ul>
+				</div>
+				<div class="footer">
+					<p>开盘时间：2017-05-10</p>
+					<p>联系人：肖欢</p>
+					<p>手机：118－5165－4926</p>
+				</div>
+			</div>
+		</div>
+		<script id="houseDataTpl" type="text/html">
+			<h1 class="posterTopic">{{posterTopic}}</h1>
+			<h5 class="buildingName">{{buildingName}}</h5>
+			<div class="imgBox">
+				<div>
+					<img src="{{buildingPicUrl}}" />
+				</div>
+			</div>
+			<div class="houseInfo" style="background: {{background}};">
+					<div class="houseDetails">
+						<p>
+							{{@ sellingPoints.replace(/,/g,'<br/>')}}
+						</p>
+						<ul>
+							<li>{{area}}</li>
+							<li>{{saleModel}}室</li>
+							<li>{{saleArea}}平</li>
+							<li>{{salePrice}}元／平</li>
+							<li><img src="{{shareCode}}" /></li>
+						</ul>
+					</div>
+					<div class="footer">
+						<p>开盘时间：{{openTime}}</p>
+						<p>联系人：{{agentName}}</p>
+						<p>手机：{{agentPhone}}</p>
+					</div>
+				</div>
+			</div>
+		</script>
+
+		<script>
+			var houseData = {
+				background: '',
+				area:"上海周边－南通",
+				buildingName: "汤臣一品",
+				buildingPicUrl: "http://shfcjr-img.oss-cn-shanghai.aliyuncs.com/building/building/2016/09/27/IMG_1474956171546_74280.jpg",
+				posterTopic: "盛大开盘",
+				openTime: "2017-05-10",
+				salePrice: "110000",
+				saleModel: "2-3",
+				saleArea: "100-100",
+				sellingPoints: "全国首屈一指的景观豪宅,<br />一线黄浦江景,<br />百年老外风情,<br />清新优美的现代园艺,<br />尽收眼底",
+				sellingPoints: "全国首屈一指的景观豪宅,一线黄浦江景,百年老外风情,清新优美的现代园艺,尽收眼底",
+				agentName: "肖欢",
+				agentPhone: "11851654926",
+				shareCode: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1501832202779&di=05abdbdda95c060e7002f6d21b0ec729&imgtype=0&src=http%3A%2F%2Fpic.enorth.com.cn%2F003%2F017%2F057%2F00301705773_66bc4800.gif"
+			};
+//			var houseData = {!data};
+			var html = template('houseDataTpl', houseData);
+			document.getElementById('content').innerHTML = html;
+		</script>
+	</body>
+
+</html>

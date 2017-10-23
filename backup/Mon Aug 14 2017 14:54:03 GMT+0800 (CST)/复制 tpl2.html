@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>全明户型</title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			
+			body {
+				background: #a9c8c8;
+			}
+			
+			#content {
+				width: 10rem;
+				margin: 0 auto;
+				font-size: 0.277777rem;
+				line-height: 0.444444rem;
+				overflow: hidden;
+				text-align: center;
+			}
+			
+			.posterTopic {
+				font-size: 0.833333rem;
+				line-height: 0.833333rem;
+				font-weight: 900;
+				margin-top: 0.944444rem;
+			}
+			
+			.buildingName {
+				font-size: 0.444444rem;
+				margin: 0.138888rem 0;
+				font-weight: 100;
+				color: #676767;
+			}
+			
+			.houseInfo {
+				color: #FFFFFF;
+				text-align: center;
+			}
+			
+			#content>img {
+				display: block;
+				width: 6.944444rem;
+				margin: 0.694444rem auto;
+			}
+			
+			.houseInfo h1 {
+				font-size: 0.833333rem;
+				line-height: 0.833333rem;
+				font-weight: 900;
+			}
+			
+			.houseInfo h5 {
+				font-size: 0.444444rem;
+				margin: 0.138888rem 0;
+				font-weight: 100;
+			}
+			
+			.houseInfo p {
+				font-size: 0.333333rem;
+				line-height: 0.655555rem;
+				opacity: 0.8;
+			}
+			
+			.houseInfo .sellingPoints {
+				width: 75%;
+				margin: 0 auto 0.555555rem auto;
+				line-height: 0.5rem;
+				font-size: 0.277777rem;
+			}
+			
+			.houseInfo p span {
+				display: inline-block;
+				padding: 0.069444rem;
+				border: 1px solid #FFFFFF;
+				border-radius: 4px;
+				line-height: 1;
+				margin-right: 0.277777rem;
+			}
+			
+			.totalPrices {
+				margin: 0.875rem 0 0.944444rem;
+			}
+			
+			.houseInfo h4 {
+				height: 0.833333rem;
+				line-height: 0.833333rem;
+				background: rgba(0, 0, 0, 0.1);
+				color: #000;
+			}
+			
+			.houseInfo h4 span {
+				margin-right: 0.694444rem;
+				opacity: 0.7;
+			}
+			
+			.houseDetails p {
+				float: left;
+				width: 4.305555rem;
+				line-height: 0.416666rem;
+			}
+			
+			.houseDetails {
+				height: 2.916666rem;
+			}
+			
+			.houseDetails ul {
+				float: left;
+				height: inherit;
+				border-left: 1px solid rgba(255, 255, 255, 0.3);
+				line-height: 0.402777rem;
+			}
+			
+			.houseDetails ul li {
+				margin-left: 1.166666rem;
+			}
+			
+			.houseDetails ul li img {
+				display: block;
+				height: 1.111111rem;
+				width: 1.111111rem;
+				margin-top: 0.2rem;
+			}
+		</style>
+		<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script src="http://shfcjr.oss-cn-shanghai.aliyuncs.com/flexible.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="http://shfcjr.oss-cn-shanghai.aliyuncs.com/template-web.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div id="content">
+			<h1 class="posterTopic">全明户型</h1>
+			<h5 class="buildingName">汤臣一品</h5>
+			<img src="http://shfcjr-img.oss-cn-shanghai.aliyuncs.com/building/building/2016/09/27/IMG_1474956171546_74280.jpg">
+			<div class="houseInfo">
+				<p class="sellingPoints">全国首屈一指的景观豪宅,一线黄浦江景,百年老外风情,清新优美的现代园艺,尽收眼底</p>
+				<p>上海周边－南通</p>
+				<p>3室2厅1卫</p>
+				<p>100.33平 朝西
+				</p>
+				<p>
+					<span>满五</span>
+					<span>满四</span>
+					<span>满三</span>
+				</p>
+				<p class="totalPrices">361万</p>
+				<h4><span>联系人：肖欢</span><span>手机：11851654926</span></h4>
+			</div>
+		</div>
+		<script id="houseDataTpl" type="text/html">
+			<h1 class="posterTopic">{{posterTitle}}</h1>
+			<h5 class="buildingName">{{plotName}}</h5>
+			<img src="http://shfcjr-img.oss-cn-shanghai.aliyuncs.com/building/building/2016/09/27/IMG_1474956171546_74280.jpg">
+			<div class="houseInfo">
+				<p class="sellingPoints">{{houseDetail}}</p>
+				<p>{{room}}室{{hall}}厅{{bathroom}}卫</p>
+				<p>
+					{{area}}平 朝{{if orientation==1}}东{{else if orientation==2}}南{{else if orientation==3}}西{{else if orientation==4}}北{{else if orientation==5}}东南{{else if orientation==6}}东北{{else if orientation==7}} 西南 {{else if orientation==8}}西北{{else if orientation==9}}东西{{else if orientation==10}}南北{{/if}}
+
+				</p>
+				<p>
+					{{each tags.split(/[,，]/) value}}
+					<span>{{value}}</span> {{/each}}
+				</p>
+				<p class="totalPrices">{{price}}万</p>
+				<h4><span>联系人：{{agentName}}</span><span>手机：{{agentPhone}}</span></h4>
+			</div>
+		</script>
+
+		<script>
+			var houseData = {
+				background: '',
+				plotName: "汤臣一品",
+				housePictureUrl: "http://shfcjr-img.oss-cn-shanghai.aliyuncs.com/building/building/2016/09/27/IMG_1474956171546_74280.jpg",
+				posterTitle: "优质房源",
+				room: 3,
+				hall: 2,
+				bathroom: 1,
+				houseDetail: "全国首屈一指的景观豪宅,一线黄浦江景,百年老外风情,清新优美的现代园艺,尽收眼底",
+				orientation: 3,
+				area: "100.33",
+				price: 361,
+				tags: "满五,满四，满三",
+				agentName: "肖欢",
+				agentPhone: "11851654926"
+			};
+
+			// var houseData = {!data};
+			var html = template('houseDataTpl', houseData);
+			document.getElementById('content').innerHTML = html;
+		</script>
+	</body>
+
+</html>
